@@ -6,6 +6,19 @@ public class Produto {
     private String descricao;
     private double preco;
 
+    public Produto(String nome, String descricao, double preco) {
+        this.nome = nome;
+        this.descricao = descricao;
+        this.preco = preco;
+    }
+
+    public Produto(String nome, double preco) {
+        this.nome = nome;
+        this.preco = preco;
+    }
+
+    public Produto() {
+    }
 
     public String getNome() {
         return nome;
@@ -31,13 +44,6 @@ public class Produto {
         this.preco = preco;
     }
 
-    void informacoesDoProduto() {
-        System.out.println("Nome: " + this.nome);
-        System.out.println("Descrição: " + this.descricao);
-        System.out.println("preço: " + this.preco);
-
-    }
-
     public double somarTotal() {
         return aplicarDesconto(this.preco / 100 * 15);
     }
@@ -46,10 +52,12 @@ public class Produto {
         return this.preco -= desconto;
     }
 
-    public boolean verificaMaiorDeIdade(int idade) {
-        if (idade < 18)
-            System.out.println("Precisa ser maior que 18 anos");
-        return false;
+    void informacoesDoProduto() {
+        System.out.println("Nome: " + this.nome);
+        System.out.println("Descrição: " + this.descricao);
+        System.out.println("preço: " + this.preco);
+
     }
+
 }
 
